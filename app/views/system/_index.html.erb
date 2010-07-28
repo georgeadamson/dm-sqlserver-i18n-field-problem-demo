@@ -1,0 +1,50 @@
+<%
+
+	@collection		||= collection																# Eg: @countries
+	model					||= @collection.model.name.snake_case					# Eg: 'country'
+	controller		||= model.to_s.plural.snake_case							# Eg: 'countries'
+
+	model						= model.to_sym
+	controller			= controller.to_sym
+
+	single_label	||= model.to_s.gsub('_',' ')
+	plural_label	||= controller.to_s.gsub('_',' ')
+
+	url_params		||= params[:url_params] || '{}'
+	url_params			= JSON.parse( url_params ) unless url_params.is_a? Hash
+	url_params.merge!({ :url_params => url_params.to_json })
+
+	title					||= "Organise the <em>#{ plural_label }</em> list"
+	resource_new	||= resource( controller, :new, url_params )
+	resource_edit	||= resource( controller, :new, url_params ).sub( '/new', '/{value}/edit' )	# TODO: Find less hacky way to achieve this!
+	label_new			||= "add a new #{ single_label }..."
+	label_edit		||= "#{ plural_label.capitalize }"
+
+	name_attr			||= @collection.model.new.respond_to?(:display_name) ? :display_name : :name
+	@collection			= @collection.all( :order => [ :order_by, :name ] ) if @collection.model.new.respond_to?(:order_by)
+
+-%>
+<div class="sectionContainer">
+
+	<%= section_head title %>
+
+	<div id="sysAdminAjaxPanel" class="sectionBody formSurround">
+
+		<%= fields_for model do %>
+
+			<% if !@collection.is_a?(Array) %>
+				<%= select :id, :label => label_edit, :prompt => '- Choose one to modify', :rel => '.ajaxPanel', :href => resource_edit, :selected => '', :collection => @collection, :class => 'width2Fields' %>
+			<% else %>
+				<%= select :id, :label => label_edit, :prompt => '- Choose one to modify', :rel => '.ajaxPanel', :href => resource_edit, :selected => '', :collection => @collection, :class => 'width2Fields', :value_method => :id, :text_method => name_attr %>
+			<% end %>
+
+		<%end =%>
+
+		<br/>
+		<%= link_to label_new, resource_new, :label => 'or', :class => 'new', :title => "Add a new #{ model } to this list" %>
+
+	</div>
+
+	<div class="sectionFoot formSurround"></div>
+	
+</div>

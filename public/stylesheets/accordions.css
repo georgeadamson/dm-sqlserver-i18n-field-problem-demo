@@ -1,0 +1,117 @@
+﻿
+/* ACCORDION: */
+
+
+DL.accordion.width2fields {
+    
+}
+DL.accordion.width3fields {
+    
+}
+
+    xDL.accordion DT.ui-accordion-header,
+    xDL.accordion DT.ui-accordion-header.ui-state-active {
+        background-color:#1264CE;
+		background-image:none;
+		color:#fff;
+		font-size:0.75em;
+		font-weight:bold;
+		height:2em;
+		line-height:2em;
+    }
+    xDL.accordion DD.ui-accordion-content {
+        background-color:#fff;
+    }
+
+
+
+
+.clientSummary DL.accordion DD {
+	xmin-height:8em;
+	xmax-height:8em;
+	height:12em;
+}
+
+	.clientSummary DL.accordion DD UL {
+		xfont-size:0.75em;
+	}
+
+	.clientSummary DL.accordion DD LABEL {
+		display:none;
+	}
+
+	DL.accordion > DD > P {
+		padding:1em;
+	}
+
+	/* If no trips then make the empty box the same height as the Client-history accordion next to it: */
+	.clientSummary DL.accordion DD:first-of-type:last-of-type {
+		xmin-height:12.5em;
+		xmax-height:12.5em;
+	}
+
+
+.clientSummary DL.accordion UL {
+	xmax-width:24em;
+}
+
+
+
+
+.clientSummary  .accordion DD .sectionBody {
+	padding:1em;
+}
+
+
+
+
+DL.clientSummaryTrips {
+  xwidth:400px;
+}
+	DL.clientSummaryTrips DD {
+	  xmax-height:6em;
+	}
+
+
+	DL.clientHistory DD {
+	  xmin-height:5em;
+	}
+
+
+
+/* Eg: 'show all' above the trips-summary accordion on Client Detail page. Tag resides inside accordion ajax container so that it will be discarded when ajax loads new content. */
+
+.labelAboveAccordion {
+	float:right;
+	position:relative;
+	top:-18px;
+}
+
+	SMALL.labelAboveAccordion A {
+		xfont-size:0.75em;
+	}
+
+
+
+
+
+
+/* Simple LIST inside an accordion: (Eg: Fellow travellers on Client details page) */
+
+DL.accordion > DD > UL > LI,
+DL.accordion > DD > DIV.ajaxPanel > UL > LI {
+	padding:0.25em 0.5em;
+	text-indent:2em;
+}
+
+	DL.accordion > DD > UL > LI > SPAN.ui-icon {
+		position:absolute;
+	}
+
+
+
+
+
+.report-criteria DL.accordion DD {
+	height:20em;
+}

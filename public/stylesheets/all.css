@@ -1,0 +1,35 @@
+
+/* Load all the required stylesheets: */
+
+@import url(/stylesheets/master.css);
+@import url(/stylesheets/search.css);
+@import url(/javascripts/jquery-daterangepicker/css/ui.daterangepicker.css);
+@import url(/javascripts/jquery-ui/css/custom-theme/jquery-ui-1.7.2.custom.css);
+@import url(/stylesheets/jquery-ui.overrides.css);
+@import url(/stylesheets/forms.layout.css);
+@import url(/stylesheets/forms.colour.css);
+@import url(/stylesheets/page.layout.css);
+@import url(/stylesheets/page.colour.css);
+@import url(/stylesheets/tabs.layout.css);
+@import url(/stylesheets/tabs.colour.css);
+@import url(/stylesheets/accordions.css);
+@import url(/stylesheets/icons.css);
+
+
+/* These are not required immediately: (They're used on content that is a few clicks away) */
+
+@import url(/javascripts/jquery-spinbox/jquery.spinbox.css);
+@import url(/javascripts/jquery-textarearesizer/jquery.textareaResizer.css);
+@import url(/stylesheets/sysadmin.css);
+@import url(/stylesheets/images.css);			/* Used by admin pages where photos are managed */
+@import url(/stylesheets/documents.css);
+@import url(/stylesheets/money_out.css);		/* Supplier payments page (invoice to suppliers) */
+@import url(/stylesheets/timeline.css);			/* This in turn loads url("/timeline_styles.css") which is dynamically generated css for timeline element classnames */
+@import url(/stylesheets/trip.itinerary.css);
+@import url(/stylesheets/trip.costings.css);
+@import url(/stylesheets/reports.css);
+
+
+/* These are only used during development and testing: */
+
+@import url(/javascripts/testing/qunit.css);

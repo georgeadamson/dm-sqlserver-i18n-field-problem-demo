@@ -1,0 +1,31 @@
+<%
+
+	@obj					||= obj																# Eg: @country
+	model					||= @obj.class.name.snake_case				# Eg: 'country'
+	controller		||= @obj.class.name.plural.snake_case	# Eg: 'countries'
+	
+	model						= model.to_sym
+	controller			= controller.to_sym
+
+	single_label	||= model.to_s.gsub('_',' ')
+
+	url_params		||= params[:url_params] || '{}'
+	url_params			= JSON.parse( url_params ) unless url_params.is_a? Hash
+	url_params.merge!({ :url_params => url_params.to_json })
+
+	@show_required_field_message = true
+
+-%>
+<div class="sectionContainer">
+	<%= form_for @obj, :action => resource( controller, url_params ) do %>
+		
+		<%= section_head "Add details for a <em>new #{ single_label }</em>" %>
+		
+		<div class="sectionBody formSurround">
+			<%= partial "#{ controller }/form", model => @obj, :url_params => url_params %>
+		</div>
+
+		<%= partial 'shared/sectionFoot_with_buttons', :foot_class => 'formSurround', :save_caption => 'Save', :ui_target => :auto, :cancel_url => resource( controller, url_params ), :cancel_caption => 'Cancel without saving' %>
+			
+	<% end =%>
+</div>

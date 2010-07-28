@@ -1,0 +1,232 @@
+
+/* GENERAL tab style overrides */
+
+.ui-tabs.ui-widget-content {
+	background-color:transparent;
+	background-image:none; /* This fixes unwanted background rectangles appearing on some tabs */
+}
+
+.ui-tabs .ui-tabs-nav {
+	background-color:transparent;
+	background-image:none;
+	padding:0;
+	border:none;
+}
+
+	.ui-tabs .ui-tabs-nav LI {
+	
+	}
+		.ui-tabs .ui-tabs-nav LI > A {
+			xfont-size:0.8em;
+			font-weight:normal;
+			padding:0.3em 0.5em 0.3em 0.5em;
+		}
+
+
+
+
+/* SPECIFIC tab style overrides */
+
+.primaryTabs.ui-tabs-nav > LI {
+	xbackground-color:#1D7DD1;
+	xbackground-image:none;
+}
+
+	.primaryTabs.ui-tabs-nav > LI > A {
+		xcolor:#fff;
+		xbackground-color:transparent;
+	}
+
+	.primaryTabs.ui-tabs-nav > LI.ui-tabs-selected {
+		xbackground-color:#EFEDDE;
+	}
+
+		.primaryTabs.ui-tabs-nav > LI.ui-tabs-selected > A {
+			xcolor:#000;
+			xbackground-color:transparent;
+		}
+
+
+
+
+.ui-tabs-nav.ui-tabs-nav-vertical > LI {
+	background-color:#EFEDDE;
+	margin-bottom:2px;
+	width:100%;
+	-moz-border-radius-topleft:0.5em; -webkit-border-top-left-radius:0.5em;
+	-moz-border-radius-bottomleft:0.5em; -webkit-border-bottom-left-radius:0.5em;
+}
+.ui-tabs-nav.ui-tabs-nav-vertical > LI > A{
+	color:#fff;
+	width:100%;
+}
+	.ui-tabs-nav.ui-tabs-nav-vertical > LI.ui-tabs-selected {
+		background-image:none;
+	}
+	.ui-tabs-nav.ui-tabs-nav-vertical > LI.ui-tabs-selected A {
+		color:#000;
+		font-weight:bold;
+	}
+		.ui-tabs-nav.ui-tabs-nav-vertical > LI.ui-tabs-selected.ui-state-hover A {
+			xcolor:#fff;
+			text-decoration:none;
+		}
+	.ui-tabs-nav.ui-tabs-nav-vertical > LI.ui-state-hover A {
+		xbackground-color:transparent;
+		xcolor:#000;
+		text-decoration:underline;
+	}
+
+
+
+
+
+.clientPage .sectionContainerLeft {
+	background-image:url(/images/tabs-lhs-nav-bg.png);
+	background-position:right top;
+	background-repeat:repeat-y;
+}
+
+
+
+
+/* All of the client's tabs need a white background except the trips: */
+.clientPageTabsContent > .clientSummary,
+.clientPageTabsContent > .clientPayments,
+.clientPageTabsContent > .clientDocuments,
+.clientPageTabsContent > .sectionBody > .clientSummary,
+.clientPageTabsContent > .sectionBody > .clientPayments,
+.clientPageTabsContent > .sectionBody > .clientDocuments {
+	background-color:#fff;
+}
+
+	UL.clientPageTabsNav {
+		xmargin-top:0.41em;	/* Gap above vertical tabs */
+		xmargin-top:2.5em;	/* Gap above vertical tabs */
+	}
+
+		/* UL.clientPageTabsNav LI, */
+		UL.clientPageTabsNav LI.trip.trip-create {
+			opacity:0.7;
+		}
+
+			UL.clientPageTabsNav LI.trip {
+				opacity:1;
+			}
+
+			UL.clientPageTabsNav LI.trip.ui-tabs-selected {
+				opacity:1;
+			}
+
+
+	UL.clientPageTabsNav LI.client-payments {
+		margin-bottom:2em;	/* Gap before trip tabs */
+	}
+
+
+
+
+		UL.clientPageTabsNav LI.trip.trip-unconfirmed A,
+		UL.clientPageTabsNav LI.trip.trip-confirmed A {
+			xfont-weight:bold;
+			xfont-style:italic;
+		}
+
+		UL.clientPageTabsNav LI.trip.trip-canceled A,
+		UL.clientPageTabsNav LI.trip.trip-abandonned A {
+			text-decoration:line-through;
+		}
+
+
+
+
+	/* Icons on LHS tabs. Depricated because they don't really enhance the UI:
+	UL.clientPageTabsNav LI.client-documents A,
+	UL.clientPageTabsNav LI.client-payments  A {
+		padding-left:1.5em;
+	}
+
+	xUL.clientPageTabsNav LI.client-details  SPAN.ui-icon,
+	UL.clientPageTabsNav LI.client-documents SPAN.ui-icon,
+	UL.clientPageTabsNav LI.client-payments  SPAN.ui-icon {
+		position:absolute;
+		top:3px;
+		left:1px;
+	}
+	*/
+
+		UL.clientPageTabsNav LI.client-details   SPAN.ui-icon,
+		UL.clientPageTabsNav LI.client-documents SPAN.ui-icon,
+		UL.clientPageTabsNav LI.client-payments  SPAN.ui-icon {
+			display:none;
+		}
+
+
+
+
+	.clientPageTabsContent > .sectionBody > .sectionContainer {
+		background-color:transparent;
+	}
+
+	.clientPageTabsContent > .sectionBody > .sectionContainer > .sectionHead {
+		background-color:#EFEDDE;
+		z-index:1;	/* Ensures it's bottom edge is in front of the sectionBody to create the correct illusion of tabs */
+	}
+
+	.clientPageTabsContent > .sectionBody > .sectionContainer > .sectionBody {
+		background-color:#fff;
+		border:solid 1px #aaa;
+		border-bottom-width:0;		/* Border-bottom is provided by sectionFoot when present. */
+		-moz-border-radius-topleft:1em;
+		-moz-border-radius-topright:1em;
+	}
+
+	.clientPageTabsContent > .sectionBody > .sectionContainer > .sectionFoot {
+		border-top:solid 1px #aaa;	/* Provide a border between sectionBody and sectionFoot. */
+	}
+
+
+
+
+
+/* All of the trip's tabs need a white background: */
+.tripPageTabsContent {
+	background-color:#fff;
+	padding:1em;
+}
+
+	.clientPageTabsContent > .sectionBody > .sectionContainer > .sectionBody.tripPageTabsContent {
+		-moz-border-radius-topleft:0;
+	}
+
+
+	.tripPageTabsNav.ui-tabs-nav {
+		border-bottom:1px solid #aaa;
+		position:absolute;
+		right:0.75em;	/* Allow a gap on RHS to give illusion of joining to curved top-right corner of the sectionBody */
+		bottom:0;
+		left:0;
+	}
+
+	.tripPageTabsNav > LI:first-child {
+		-moz-border-radius-topleft:0.5em;
+	}
+	
+	
+	
+	.tripPageTabsNav > LI.ui-state-default
+	{
+		background-color:#efedde;
+		background-image:none;
+	}
+	
+		.tripPageTabsNav > LI.ui-state-default > A
+		{
+			color:#000;
+		}
+
+	.tripPageTabsNav > LI.ui-tabs-selected
+	{
+		background-color:#fff;
+		
+	}

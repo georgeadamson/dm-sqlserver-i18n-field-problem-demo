@@ -1,0 +1,18 @@
+
+TABLE.money-out {
+	
+}
+
+TABLE.money-out THEAD TH {
+	padding:0.25em;
+	text-align:left;
+}
+
+TABLE.money-out TBODY TD {
+	padding:0.25em;
+	
+}
+
+TABLE.money-out TR.supplier {
+	background-color:#ddd;
+}

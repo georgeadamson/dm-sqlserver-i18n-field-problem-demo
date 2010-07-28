@@ -1,0 +1,41 @@
+﻿#sysAdminTabsContent UL {
+	-moz-column-width:6em;	/* Mozilla can make nice columns. */
+	font-size:0.75em;
+	height:8em;
+	list-style:none;
+	overflow-x:scroll;
+}
+
+#sysAdminTabsContent UL LI {
+	display:inline-block;	/* Graceful degradation in browsers that do not support css columns. */
+	width:6em;
+}
+
+
+#sysAdminTabsContent > .sectionBody > .sectionContainer > .sectionBody {
+	background-color:#fff;
+	padding-top:1em;
+}
+
+
+
+
+
+TABLE.pnrs THEAD TH {
+	padding:0.2em;
+	text-align:right;
+}
+TABLE.pnrs THEAD TH.left {
+	text-align:left;
+}
+TABLE.pnrs TBODY TH {
+	padding:0.2em;
+	text-align:left;
+}
+TABLE.pnrs TBODY TD {
+	padding:0.2em;
+	text-align:right;
+}
+TABLE.pnrs TBODY TD.left {
+	text-align:left;
+}

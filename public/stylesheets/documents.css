@@ -1,0 +1,25 @@
+
+TABLE.documents {
+	padding:1em;
+}
+
+TABLE.documents THEAD TH {
+	min-width:5em;
+	padding-right:1em;
+	text-align:left;
+}
+
+
+
+TABLE.documents TBODY TD {
+	padding-right:1em;
+}
+
+TABLE.documents TBODY SPAN.ui-icon {
+	display:inline-block;
+}
+
+TABLE.documents TBODY TH {
+	padding-top:1.5em;
+	text-align:left;
+}

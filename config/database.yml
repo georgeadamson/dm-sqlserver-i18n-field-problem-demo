@@ -1,0 +1,123 @@
+---
+# This is a sample database file for the DataMapper ORM
+development: &defaults
+
+  # These are the settings for repository :default
+
+  ## SELDB:
+  #adapter: sqlserver
+  #database: steppes2dev;
+  #username: steppescrm
+  #password: password
+  #host: seldb
+  #encoding: utf8						# Causes error message at startup: Encoding utf8log_stream=STDOUTlog_level=0 is not a known Ruby encoding for SqlServer
+  #SendStringParametersAsUnicode: false	# Has no effect (Is true by default)
+
+
+  ## POSTCODE lookup:
+  repositories:
+    postcodes:
+      adapter: sqlserver
+      database: postcodes;
+      username: steppescrm
+      password: password
+      host: seldb
+
+
+
+  ## SELSVR01:
+  #adapter: sqlserver
+  #database: steppes2;
+  #username: steppescrm
+  #password: password
+  #host: selsvr01
+
+  #local:
+  adapter: sqlserver
+  database: steppes2dev;instance=SQLEXPRESS;
+  username: steppescrm
+  password: password
+  host: ALEX5AC5
+
+  #adapter:  sqlite3
+  #database: development.db
+
+  #adapter:  mysql
+  #database: db_development
+  #username: root
+  #password: 
+  #host: localhost
+
+  log_stream: STDOUT  # See: http://blog.aizatto.com/2008/01/17/logging-datamapper-sql-queries-in-merb/
+  log_level: 0
+
+  # Add more repositories
+  # repositories:
+  #   repo1:
+  #     adapter:  sqlite3
+  #     database: sample_1_development.db
+  #   repo2:
+  #     ...
+
+
+
+
+
+test:
+  <<:       *defaults
+  database: steppes2test;
+  username: steppescrm
+  password: password
+
+  # repositories:
+  #   repo1:
+  #     database: sample_1_test.db
+
+usertesting:
+  <<:       *defaults
+  database: steppes2uat;
+  username: steppescrm
+  password: password
+
+  # repositories:
+  #   repo1:
+  #     database: sample_1_test.db
+
+production:
+  <<:       *defaults
+  database: steppes2live;
+  username: steppescrm
+  password: password
+
+  # repositories:
+  #   repo1:
+  #     database: sample_production.db
+
+rake:
+  <<: *defaults
+
+
+
+## POSTCODE lookup:
+#repositories:
+postcodes:
+  <<:       *defaults
+  database: postcodes;
+  username: steppescrm
+  password: password
+
+
+
+#repositories:
+#
+#  test:
+#    <<:       *defaults
+#    database: steppes2test;
+#    username: steppescrm
+#    password: password
+#
+#  usertesting:
+#    <<:       *defaults
+#    database: steppes2uat;
+#    username: steppescrm
+#    password: password

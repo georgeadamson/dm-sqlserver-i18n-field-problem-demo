@@ -1,0 +1,147 @@
+
+/* Note: These styles have deliberatebly low specificity so they can be overridden easily. */
+
+SPAN.ui-icon {
+	display:inline-block;
+}
+
+	H2 > SPAN.ui-icon,
+	H3 > SPAN.ui-icon {
+		position:relative;
+		top:0.1em;
+	}
+
+
+DD.ui-icon,
+LI.ui-icon {
+	text-indent:16px;
+	width:auto;
+}
+
+
+
+.ui-state-default .ui-icon {
+	background-image:url("/javascripts/jquery-ui/css/custom-theme/images/ui-icons_000000_256x240.png");
+	margin-bottom:-2px;
+}
+
+
+
+
+
+/* Action icons: */
+
+A.new,
+A.save,
+A.cancel,
+xA.mailto, xA[href ^= mailto] {
+	background-position:2px center;
+	background-repeat:no-repeat;
+	display:inline-block;	/* This is only present to enable text-indent */
+	text-indent:18px;
+}
+
+A.new {
+	background-image:url(/images/icons/icon.add.png);
+}
+A.save {
+	background-image:url(/images/icons/icon.save.png);
+}
+A.cancel {
+	background-image:url(/images/icons/icon.cancel.png);
+}
+A.mailto, A[href ^= mailto] {
+	xbackground-image:url(/images/icons/icon.email.png);
+	background-position:2px 1px;
+}
+	/* Tweak indentation technique for links styled with ellipsis: (See client details page for example) */
+	xA.ellipsis.mailto, x.ellipsis A.mailto, xA.ellipsis[href ^= mailto], x.ellipsis A[href ^= mailto] {
+		text-indent:0;
+		padding-left:20px;
+	}
+
+
+
+
+
+
+
+
+/* Special ACTION icons: */
+
+	.ui-icon.ui-icon-add {
+		background-image:url("/images/icons/icon.add.png");
+		xbackground-position:0 0;
+	}
+
+
+
+/* Special OBJECT icons: */
+
+	.ui-icon.ui-icon-client {
+		background-image:url(/images/icons/icon.client.png);
+		background-position:0 0;
+	}
+
+	.ui-icon.ui-icon-group {
+		background-image:url(/images/icons/icon.group.png);
+		background-position:0 0;
+	}
+
+	SPAN.ui-icon.ui-icon-document {
+		background-image:url(/images/icons/icon.document.png);
+		background-position:0 0;
+	}
+
+	SPAN.ui-icon.ui-icon-trip {
+		background-image:url(/images/icons/icon.trip.png);
+		background-position:0 0;
+	}
+
+	SPAN.ui-icon.ui-icon-date {
+		background-image:url(/images/icons/icon.date.png);
+		background-position:0 0;
+	}
+
+	SPAN.ui-icon.ui-icon-payment {
+		background-image:url(/images/icons/icon.money.png);
+		background-position:0 0;
+	}
+
+
+
+
+
+/* trip_element_types: (Flight, Accomm, Ground, Misc) */
+
+	SPAN.ui-icon.ui-icon-flight {
+		background-image:url(/images/icons/icon.flight.png);
+		background-position:0 0;
+	}
+	SPAN.ui-icon.ui-icon-accomm {
+		background-image:url(/images/icons/icon.accomm.png);
+		background-position:0 0;
+	}
+	SPAN.ui-icon.ui-icon-ground {
+		background-image:url(/images/icons/icon.ground.png);
+		background-position:0 0;
+	}
+	SPAN.ui-icon.ui-icon-misc {
+		background-image:url(/images/icons/icon.misc.png);
+		background-position:0 0;
+	}
+
+
+
+
+/* document types: (.doc, .pdf etc) */
+
+	SPAN.ui-icon.ui-icon-pdf {
+		background-image:url(/images/icons/icon.pdf.gif);
+		background-position:0 0;
+	}
+
+	SPAN.ui-icon.ui-icon-word {
+		background-image:url(/images/icons/icon.word.gif);
+		background-position:0 0;
+	}

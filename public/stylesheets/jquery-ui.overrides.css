@@ -1,0 +1,8 @@
+
+/* ui.accordion: */
+
+.ui-accordion .ui-accordion-header {
+	height:2.5em;
+	line-height:1.8em;	/* Prevent word wrapping.
+	padding:0.5em;		/* This will not be necessary if we place text in <a> tags within each header */
+}

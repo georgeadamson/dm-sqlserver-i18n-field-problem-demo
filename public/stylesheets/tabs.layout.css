@@ -1,0 +1,152 @@
+
+/* Override page.layout where necessary: */
+
+#pageTabs > .sectionHead {
+	height:2.5em;
+	left:1.5em;
+	right:1.5em;
+}
+#pageTabs > .sectionBody {
+	background-color:#EFEDDE;
+	top:2.5em;
+	left:1em;
+	right:1em;
+	-moz-border-radius-topleft: 8px; -webkit-border-top-left-radius: 8px;
+	-moz-border-radius-topright: 8px; -webkit-border-top-right-radius: 8px;
+}
+
+
+
+#pageTabsNav {
+	background:transparent;
+	border:none;
+	line-height:2em;
+}
+
+	#pageTabsNav LI.ui-tabs-selected {
+		background:#EFEDDE;
+	}
+
+		#pageTabsNav LI.ui-tabs-selected A {
+			background-color:transparent;
+		}
+
+
+
+
+
+/* Style for the [x] close button on the tabs: */
+
+.ui-tabs .ui-tabs-nav LI A.close-tab {
+	display:none;
+}
+
+	.ui-tabs .ui-tabs-nav LI.ui-tabs-selected A.close-tab {
+		cursor:pointer;
+		display:inline-block;
+		-moz-border-radius:0.75em; -webkit-border-radius:0.75em;
+		line-height:14px;
+		margin:4px 1px 0 1px;
+	}
+
+		.ui-tabs .ui-tabs-nav LI.ui-tabs-selected A.close-tab:hover {
+			background:transparent url(/images/icons/icon.circle.red.png) no-repeat center;
+			color:#fff;
+		}
+
+
+
+
+
+	.clientPage > .sectionHead {
+		left:1em;
+		right:1em;
+		background-image:url(/images/backgrounds/clientpage.head.bg.gif);
+		background-repeat:no-repeat;
+		background-position:8em bottom;
+	}
+	.clientPage > .sectionBody {
+		left:1em;
+		right:1em;
+		bottom:0.5em;
+	}
+
+	.sectionHead > H2,
+	.clientPage > .sectionHead > H2 {	/* TODO: Delete this 2nd line? */
+		margin-top:0.5em;
+	}
+
+	.sectionHead.indentSurround  {
+		left:1em;
+		right:1em;
+	}
+	
+		.clientPage > .sectionHead > H2 > SPAN.ui-icon {
+		xposition:relative;
+		xtop:0.2em;
+		}
+
+
+
+
+	#tabDashboard > .sectionContainer > .sectionHead,
+	#tabDashboard > .sectionContainer > .sectionBody,
+	#tabDashboard > .sectionContainer > .sectionFoot {
+		left:1em;
+		right:1em;
+	}
+
+
+
+
+
+/* Overrides jquery ui-tabs.css where necessary. */
+
+
+.ui-tabs .ui-tabs-panel {
+	padding:0em;
+}
+
+.ui-tabs .ui-tabs-nav LI A {
+	padding:0.1em;
+}
+
+
+
+.verticalTabsNav LI {
+	width:100%;
+}
+	.verticalTabsNav LI A {
+		width:100%;
+	}
+
+A.clientPageTabsNav_AddNewTrip {
+	font-size:0.75em;
+	float:right;
+}
+
+
+
+
+
+.tripPage .tripHeading {
+	height:3.5em;
+	line-height:3.5em;
+}
+
+.tripPage .countryTabsContainer {
+	border:none;
+}
+
+.tripPage .countryTabsPanel {
+	border:solid 1px #aaa;
+	width:40em;
+}
+
+
+
+
+.primaryTabs.ui-tabs-nav > LI:first-child {
+	margin-right:2em;
+}
+

@@ -1,0 +1,31 @@
+merb : worker (port 4000) ~ WebRequest.import_latest_web_requests({})
+merb : worker (port 4000) ~ Downloading WebRequests Thu Jul 22 12:39:15 UTC 2010: 'Steppes Contact Form' from url http://www.steppestravel.co.uk/services/DataAccess.asmx/GetForms?formName=Steppes+Contact+Form&username=george&password=george371&fromDate=2010-06-29&toDate=2010-07-23&type=0
+merb : worker (port 4000) ~ Error: Could not fetch web requests: 
+ Url: http://www.steppestravel.co.uk/services/DataAccess.asmx/GetForms?formName=Steppes+Contact+Form&username=george&password=george371&fromDate=2010-06-29&toDate=2010-07-23&type=0 
+ Reason: initialize: name or service not known
+merb : worker (port 4000) ~ Downloaded 0 WebRequests: 'Steppes Contact Form' from url http://www.steppestravel.co.uk/services/DataAccess.asmx/GetForms?formName=Steppes+Contact+Form&username=george&password=george371&fromDate=2010-06-29&toDate=2010-07-23&type=0
+merb : worker (port 4000) ~ Downloading WebRequests Thu Jul 22 12:39:15 UTC 2010: 'Steppes Newsletter Signup' from url http://www.steppestravel.co.uk/services/DataAccess.asmx/GetForms?formName=Steppes+Newsletter+Signup&username=george&password=george371&fromDate=2010-06-29&toDate=2010-07-23&type=0
+merb : worker (port 4000) ~ Error: Could not fetch web requests: 
+ Url: http://www.steppestravel.co.uk/services/DataAccess.asmx/GetForms?formName=Steppes+Newsletter+Signup&username=george&password=george371&fromDate=2010-06-29&toDate=2010-07-23&type=0 
+ Reason: initialize: name or service not known
+merb : worker (port 4000) ~ Downloaded 0 WebRequests: 'Steppes Newsletter Signup' from url http://www.steppestravel.co.uk/services/DataAccess.asmx/GetForms?formName=Steppes+Newsletter+Signup&username=george&password=george371&fromDate=2010-06-29&toDate=2010-07-23&type=0
+merb : worker (port 4000) ~ Downloading WebRequests Thu Jul 22 12:39:15 UTC 2010: 'Steppes Brochure Request' from url http://www.steppestravel.co.uk/services/DataAccess.asmx/GetForms?formName=Steppes+Brochure+Request&username=george&password=george371&fromDate=2010-06-29&toDate=2010-07-23&type=0
+merb : worker (port 4000) ~ Error: Could not fetch web requests: 
+ Url: http://www.steppestravel.co.uk/services/DataAccess.asmx/GetForms?formName=Steppes+Brochure+Request&username=george&password=george371&fromDate=2010-06-29&toDate=2010-07-23&type=0 
+ Reason: initialize: name or service not known
+merb : worker (port 4000) ~ Downloaded 0 WebRequests: 'Steppes Brochure Request' from url http://www.steppestravel.co.uk/services/DataAccess.asmx/GetForms?formName=Steppes+Brochure+Request&username=george&password=george371&fromDate=2010-06-29&toDate=2010-07-23&type=0
+merb : worker (port 4000) ~ Downloading WebRequests Thu Jul 22 12:39:15 UTC 2010: 'Discovery Contact Form' from url http://www.steppestravel.co.uk/services/DataAccess.asmx/GetForms?formName=Discovery+Contact+Form&username=george&password=george371&fromDate=2010-06-29&toDate=2010-07-23&type=0
+merb : worker (port 4000) ~ Error: Could not fetch web requests: 
+ Url: http://www.steppestravel.co.uk/services/DataAccess.asmx/GetForms?formName=Discovery+Contact+Form&username=george&password=george371&fromDate=2010-06-29&toDate=2010-07-23&type=0 
+ Reason: initialize: name or service not known
+merb : worker (port 4000) ~ Downloaded 0 WebRequests: 'Discovery Contact Form' from url http://www.steppestravel.co.uk/services/DataAccess.asmx/GetForms?formName=Discovery+Contact+Form&username=george&password=george371&fromDate=2010-06-29&toDate=2010-07-23&type=0
+merb : worker (port 4000) ~ Downloading WebRequests Thu Jul 22 12:39:15 UTC 2010: 'Discovery Newsletter Signup' from url http://www.steppestravel.co.uk/services/DataAccess.asmx/GetForms?formName=Discovery+Newsletter+Signup&username=george&password=george371&fromDate=2010-06-29&toDate=2010-07-23&type=0
+merb : worker (port 4000) ~ Error: Could not fetch web requests: 
+ Url: http://www.steppestravel.co.uk/services/DataAccess.asmx/GetForms?formName=Discovery+Newsletter+Signup&username=george&password=george371&fromDate=2010-06-29&toDate=2010-07-23&type=0 
+ Reason: initialize: name or service not known
+merb : worker (port 4000) ~ Downloaded 0 WebRequests: 'Discovery Newsletter Signup' from url http://www.steppestravel.co.uk/services/DataAccess.asmx/GetForms?formName=Discovery+Newsletter+Signup&username=george&password=george371&fromDate=2010-06-29&toDate=2010-07-23&type=0
+merb : worker (port 4000) ~ Downloading WebRequests Thu Jul 22 12:39:15 UTC 2010: 'Discovery Brochure Request' from url http://www.steppestravel.co.uk/services/DataAccess.asmx/GetForms?formName=Discovery+Brochure+Request&username=george&password=george371&fromDate=2010-06-29&toDate=2010-07-23&type=0
+merb : worker (port 4000) ~ Error: Could not fetch web requests: 
+ Url: http://www.steppestravel.co.uk/services/DataAccess.asmx/GetForms?formName=Discovery+Brochure+Request&username=george&password=george371&fromDate=2010-06-29&toDate=2010-07-23&type=0 
+ Reason: initialize: name or service not known
+merb : worker (port 4000) ~ Downloaded 0 WebRequests: 'Discovery Brochure Request' from url http://www.steppestravel.co.uk/services/DataAccess.asmx/GetForms?formName=Discovery+Brochure+Request&username=george&password=george371&fromDate=2010-06-29&toDate=2010-07-23&type=0

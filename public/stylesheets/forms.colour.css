@@ -1,0 +1,25 @@
+
+SELECT,
+TEXTAREA,
+INPUT[type=text],
+INPUT[type=password] {
+	border:none;
+	outline:solid 1px #D9D9D9;
+}
+
+SELECT[readonly],
+TEXTAREA[readonly],
+INPUT[type=text][readonly] {
+	color:#000;
+	background-color:#ddd;
+	border-color:transparent;
+	xoutline-color:transparent;
+}
+
+DIV.total > LABEL {
+	font-weight:bolder;
+}
+INPUT[type=text].total {
+	font-weight:bolder;
+}
+

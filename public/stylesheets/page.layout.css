@@ -1,0 +1,456 @@
+HTML {
+	font-size:12px;	/* Default font-size for 1em. All "em" font sizes will be RELATIVE TO THIS VALUE. */
+	font-family:arial, verdana, sans-serif; 
+	margin:0em;
+	padding:0em;
+	height:100%;
+	overflow:hidden;
+}
+
+BODY * {
+	/* border:0; */
+	margin:0;
+	padding:0;
+}
+
+
+*.hidden,
+*.template {
+	display:none;
+}
+
+.sectionHead,
+.sectionBody,
+.sectionFoot,
+.sectionContainer {
+	border:0;
+	margin:0;
+	padding:0;
+}
+
+
+/* ----- Start of core CONTENT SECTION DEFINITIONS ----- */
+
+	/* Tip: If you change any positioning, don't forget to adjust the .withMargins positions too! */
+
+
+
+
+	/*	HTML markup must follow this structure:
+
+		<div class="sectionContainer">
+			<div class="sectionHead">...</div>
+			<div class="sectionBody">
+				<div class="sectionContainer">
+					<div class="sectionHead">...</div>
+					<div class="sectionBody">
+						... etc. CSS automatically allows for further nesting using this structure.
+					</div>
+					<div class="sectionFoot">...</div>
+				</div>
+			</div>
+			<div class="sectionFoot">...</div>
+		</div>
+	*/
+
+
+
+
+
+	/* <DIV class="sectionContainer" > */
+	/* Note: You can use more than one .sectionContainer inside a .sectionBody to show several stacked above eachother in a scrolling sectionBody. */
+
+		.sectionContainer {
+			margin:0;
+			border:0;
+			padding:0;
+			height:100%; 
+			max-height:100%; 
+			overflow:hidden;
+			width:100%;				/* Width is not required except to overcome IE6/7 bug where content is not arranged correctly until window resize! */
+			position:relative;		/* relative is used to ensure positioned child elements will be relative to the container. */
+		}
+
+		* HTML .sectionContainer {	/* IE6 */
+			padding:2em 0 2em 0; 
+		}
+
+
+	/* <DIV class="sectionBody" > */
+
+		.sectionBody {
+			position:absolute;
+			top:4em;
+			left:0;
+			bottom:4em; 
+			right:0; 
+			overflow:auto;
+			overflow-x:hidden;
+		}
+
+		* HTML .sectionBody {	/* IE6 */
+			height:100%; 
+			width:100%;
+			position:fixed;
+
+			position:relative; top:0em;	/* Necessary to allow for splitter functionality */
+		}
+
+
+
+	/* <DIV class="sectionHead" > */
+
+		.sectionHead {
+			position:absolute; 
+			top:0; 
+			left:0;
+			right:0;
+			width:auto;
+			height:4em; 
+			overflow:hidden; 
+		}
+
+		* HTML .sectionHead {	/* IE6 */
+			width:100%;
+			height:4em;
+		}
+
+
+
+	/* <DIV class="sectionFoot" > */
+
+		.sectionFoot {
+			position:absolute; 
+			bottom:0; 
+			left:0;
+			right:0;
+			width:auto;
+			height:4em; 
+			overflow:hidden; 
+		}
+
+		* HTML .sectionFoot {	/* IE6 */
+			width:100%;
+			height:4em;
+		}
+
+
+
+	BODY FORM {
+		
+	}
+
+
+
+/* ----- End of core CONTENT SECTION DEFINITIONS ----- */
+
+
+
+
+/* Custom .sectionHead sizes: (Also see the .withMargins class definition) */
+
+	/* Page BODY.sectionHead: */
+
+		/* Mozilla etc: (Also allows for ASP.Net's use of the FORM element) */
+		BODY.sectionContainer>.sectionHead,
+		BODY.sectionContainer>FORM>.sectionHead {
+			height:3.5em;
+		}
+		BODY.sectionContainer>.sectionBody,
+		BODY.sectionContainer>FORM>.sectionBody {
+			top:3.5em;
+		}
+
+		/* IE6: */
+		* HTML BODY.sectionContainer {
+			padding-top:4em;
+		}
+
+		* HTML .sectionHead {
+			height:4em;
+		}
+			* HTML .sectionBody .sectionHead {
+				height:2em;
+			}
+
+
+
+	/* CUSTOM: Trip tab strip sectionHeader is taller than others: */
+
+		.sectionContainer.tripPage .sectionBody {
+		  top:6em;
+		}
+		.sectionContainer.tripPage .sectionHead {
+		  height:6.05em;	/* Deliberately overlap top of sectionBody by 1 pixel to make border-bottom look like top of sectionBody. */
+		}
+
+
+
+
+
+/* Allow POPUP div to escape from footer: (eg: DROPDOWNBUTTON) */
+/* By making overflow:visible, any absolutely positioned element can escape from the footer. Has side effects! */
+
+	.sectionFoot.overflowVisible {
+		overflow:visible;
+	}
+
+
+
+
+/* VERTICAL SPLITTER using .sectionContainers: (For use with jQuery Splitter but ok with js disabled) */
+/* Ok in IE. Not quite right in Mozilla strict.dtd, worse with transitional.dtd) */
+
+	/* <DIV class="sectionContainer sectionContainerLeft" > */
+	/* <DIV class="sectionContainer sectionContainerRight" > */
+
+	.sectionContainerLeft {
+		width:8em;				/* jQuery Splitter uses this as DEFAULT width. */
+		min-width:8em;			/* jQuery Splitter uses this as MINIMUM width. */
+		position:absolute;
+	}
+
+	.sectionContainerRight {
+		left:9em;				/* Left must match width of .sectionContainerLeft */
+		right:0;
+		min-width:10em;			/* jQuery Splitter uses this as MINIMUM width. */
+		position:absolute;
+		width:auto;
+	}
+
+
+
+
+/* HORIZONTAL SPLITTER using .sectionContainers: (For use with jQuery Splitter but ok with js disabled) */
+/* Ok in IE. Not quite right in Mozilla strict.dtd, worse with transitional.dtd) */
+
+	/* <DIV class="sectionContainer sectionContainerTop" > */
+	/* <DIV class="sectionContainer sectionContainerBottom" > */
+
+	.sectionContainerTop {
+		height:40%;				/* jQuery Splitter uses this as DEFAULT height. */
+		min-height:8em;			/* jQuery Splitter uses this as MINIMUM height. */
+		position:absolute;
+	}
+
+	.sectionContainerBottom {
+		top:40%;
+		left:0;
+		height:60%;
+		min-height:8em;			/* jQuery Splitter uses this as MINIMUM height. */
+		position:absolute;
+	}
+
+
+
+
+
+
+/* .sectionContainer WITH MARGIN(S) */
+
+	/* IE 6 & 7: */
+		* HTML .sectionContainer.withMargins {
+			border:solid 0.25em #fff;			/* WHITE margin */
+		}
+		* HTML BODY.sectionContainer.withMargins {
+			border-color:#31368A;				/* DARK BLUE margin */
+		}
+
+	/* Non-IE browsers: */
+		.sectionContainer.withMargins>.sectionBody {
+			top:2.25em;
+			left:0.25em;
+			bottom:2.25em; 
+			right:0.25em; 
+		}
+
+			/* Override default .sectionBody to provide 4em BODY>.sectionHead element height: */
+			BODY.sectionContainer.withMargins>.sectionBody,
+			BODY.sectionContainer.withMargins>FORM>.sectionBody {
+				top:4.25em;
+			}
+
+		.sectionContainer.withMargins>.sectionHead,
+		.sectionContainer.withMargins>FORM>.sectionHead {
+			top:0.25em;
+			left:0.25em;
+			right:0.25em; 
+		}
+
+		.sectionContainer.withMargins>.sectionFoot,
+		.sectionContainer.withMargins>FORM>.sectionFoot {
+			bottom:0.25em;
+			left:0.25em;
+			right:0.25em; 
+		}
+
+
+
+	/* More granular control over .sectionContainer WITH MARGIN TOP/RIGHT/BOTTOM/LEFT: */
+
+		/* IE 6 & 7: */
+			* HTML .sectionContainer.withMarginTop {
+				border-top:solid 0.25em #fff;	/* WHITE margin */
+			}
+			* HTML BODY.sectionContainer.withMarginTop {
+				border-top-color:#31368A;		/* DARK BLUE margin */
+			}
+
+		/* Non-IE browsers: */
+			.sectionContainer.withMarginTop>.sectionBody,
+			.sectionContainer.withMarginTop>FORM>.sectionBody {
+				top:2.25em;
+			}
+				BODY.sectionContainer.withMarginTop>.sectionBody,
+				BODY.sectionContainer.withMarginTop>FORM>.sectionBody {
+					top:4.25em;	/* Override default .sectionBody to provide 4em BODY>.sectionHead element height. */
+				}
+			.sectionContainer.withMarginTop>.sectionHead,
+			.sectionContainer.withMarginTop>FORM>.sectionHead {
+				top:0.25em;
+			}
+
+
+
+
+
+/* .sectionContainer WITH NO .sectionHead and/or .sectionFoot... */
+
+	/* <DIV class="sectionContainer noSectionHead" > */
+
+		/* Hide .sectionHead in non-IE browsers: */
+		.sectionContainer.noSectionHead > .sectionBody { top:0; }
+		.sectionContainer.noSectionHead > FORM > .sectionBody { top:0; }
+		.sectionContainer.noSectionHead > .sectionHead { display:none; }
+		.sectionContainer.noSectionHead > FORM > .sectionHead { display:none; }
+
+		/* Hide .sectionHead in IE browsers: (And prevent cascade to grandchild sectionHead elements) */
+		* HTML .sectionContainer.noSectionHead { padding-top:0em; }
+
+		* HTML .sectionContainer.noSectionHead .sectionHead { display:none; }
+		* HTML .sectionContainer.noSectionHead .sectionContainer .sectionHead { display:block; }
+
+		* HTML .sectionContainer .sectionContainer.noSectionHead .sectionHead { display:none; }
+		* HTML .sectionContainer .sectionContainer.noSectionHead .sectionContainer .sectionHead { display:block; }
+
+		* HTML .sectionContainer .sectionContainer .sectionContainer.noSectionHead .sectionHead { display:none; }
+		* HTML .sectionContainer .sectionContainer .sectionContainer.noSectionHead .sectionContainer .sectionHead { display:block; }
+
+		* HTML .sectionContainer .sectionContainer .sectionContainer .sectionContainer.noSectionHead .sectionHead { display:none; }
+		* HTML .sectionContainer .sectionContainer .sectionContainer .sectionContainer.noSectionHead .sectionContainer .sectionHead { display:block; }
+
+		* HTML .sectionContainer .sectionContainer .sectionContainer .sectionContainer .sectionContainer.noSectionHead .sectionHead { display:none; }
+		* HTML .sectionContainer .sectionContainer .sectionContainer .sectionContainer .sectionContainer.noSectionHead .sectionContainer .sectionHead { display:block; }
+
+
+
+
+	/* <DIV class="sectionContainer noSectionFoot" > */
+
+		/* Hide .sectionFoot in non-IE browsers: */
+		.sectionContainer.noSectionFoot > .sectionBody { bottom:0; }
+		.sectionContainer.noSectionFoot > FORM > .sectionBody { bottom:0; }
+		.sectionContainer.noSectionFoot > .sectionFoot { display:none; }
+		.sectionContainer.noSectionFoot > FORM > .sectionFoot { display:none; }
+
+		/* Hide .sectionFoot in IE browsers: (And prevent cascade to grandchild sectionFoot elements) */
+		* HTML .sectionContainer.noSectionFoot { padding-bottom:0em; }
+
+		* HTML .sectionContainer.noSectionFoot .sectionFoot { display:none; }
+		* HTML .sectionContainer.noSectionFoot .sectionContainer .sectionFoot { display:block; }
+
+		* HTML .sectionContainer .sectionContainer.noSectionFoot .sectionFoot { display:none; }
+		* HTML .sectionContainer .sectionContainer.noSectionFoot .sectionContainer .sectionFoot { display:block; }
+
+		* HTML .sectionContainer .sectionContainer .sectionContainer.noSectionFoot .sectionFoot { display:none; }
+		* HTML .sectionContainer .sectionContainer .sectionContainer.noSectionFoot .sectionContainer .sectionFoot { display:block; }
+
+		* HTML .sectionContainer .sectionContainer .sectionContainer .sectionContainer.noSectionFoot .sectionFoot { display:none; }
+		* HTML .sectionContainer .sectionContainer .sectionContainer .sectionContainer.noSectionFoot .sectionContainer .sectionFoot { display:block; }
+
+		* HTML .sectionContainer .sectionContainer .sectionContainer .sectionContainer .sectionContainer.noSectionFoot .sectionFoot { display:none; }
+		* HTML .sectionContainer .sectionContainer .sectionContainer .sectionContainer .sectionContainer.noSectionFoot .sectionContainer .sectionFoot { display:block; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/* SPLITTER bar style. (The thin strip between the LHS and RHS tab panels. It is added dynamically at runtime) */
+	/* The .active class is added when the mouse is over the splitter or the splitter is focused via the keyboard taborder or an accessKey. */
+	/*
+		Troubleshooting:
+			- Panels do not resize when you move the splitter: Make sure there is enough room to allow for minHeights/Widths!
+	*/
+	.vsplitbar {
+		cursor:col-resize;
+		cursor:e-resize;
+		width:17px;
+		height:100%;	/* Only necessary for Mozilla */
+		background-position:center;
+		background-repeat:no-repeat;
+		background-image:url(images/buttons/grab_splitter_v.gif);
+	}
+	.vsplitbar.active,
+	.vsplitbar:hover {
+		background-image:url(images/buttons/grab_splitter_v_active.gif);
+	}
+
+	.hsplitbar {
+		cursor:row-resize;
+		cursor:n-resize;
+		height:17px;
+		width:100%;	/* Only necessary for Mozilla */
+		background-color:#31368A;
+		background-position:center;
+		background-repeat:no-repeat;
+		background-image:url(images/buttons/grab_splitter_v.gif);
+	}
+	.hsplitbar.active,
+	.hsplitbar:hover {
+		background-image:url(images/buttons/grab_splitter_v_active.gif);
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	.scrollTable
+	{
+		xheight:20em;
+		margin:0em;
+		padding:0em;
+		overflow:auto;
+		overflow-x:hidden;	/* Hide horizontal scroll bar */
+		clear:left;
+		padding-right:1em;
+	}
+
+	.scrollTable TABLE
+	{
+		width:auto;
+		width:100%;
+		margin:0px;
+	}
+
+	.scrollTable TABLE THEAD TR
+	{
+		top:expression(parentNode.parentNode.parentNode.scrollTop); /* A hack but it works. TODO: Pure css solution? */
+		width:auto;
+		xposition:relative;
+	}

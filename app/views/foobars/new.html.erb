@@ -1,0 +1,6 @@
+<h1>Foobars controller, new action</h1>
+
+<%= form_for(@foobar, :action => resource(:foobars) ) do %>
+  <%= text_field :name, :label=>"name" %>
+  <%= submit 'submit' %>
+<% end =%>

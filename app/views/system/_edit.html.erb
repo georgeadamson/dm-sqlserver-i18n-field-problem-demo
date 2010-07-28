@@ -1,0 +1,65 @@
+<%
+	
+	@obj							||= obj																# Eg: @country
+	model							||= @obj.class.name.snake_case				# Eg: 'country'
+	controller				||= @obj.class.name.plural.snake_case	# Eg: 'countries'
+
+	model								= model.to_sym
+	controller					= controller.to_sym
+
+	single_label			||= model.to_s.gsub('_',' ')
+
+	delete_caption		||= "Delete this #{ single_label }"
+	delete_uid				||= "delete-btn#{ Time.new.to_i }"
+	label_for_delete	||= true
+
+	url_params				||= params[:url_params] || '{}'
+	url_params					= JSON.parse( url_params ) unless url_params.is_a? Hash
+	url_params.merge!({ :url_params => url_params.to_json })
+
+	@show_required_field_message = true
+
+-%>
+<div class="sectionContainer">
+
+		<%= section_head "Modify details for <em>#{ @obj.name }</em>" %>
+
+
+		<%# Workaround: Calling resource( @obj, url_params ) seems to modify url_params, causing error if we call it again "The route has 2 variables: [:id, :format]"
+				Hence we pass in a copy of the hash instead! %>
+		<%= form_for @obj, :action => resource( @obj, url_params.merge({}) ) do %>
+
+			<div class="sectionBody formSurround">
+				<%# Notice how we pass the @obj to the form using the param name it expects: (Eg: :mailing_zone => @obj) %>
+				<%= partial "#{ controller }/form", model => @obj %>
+			</div>
+
+			<%	# Apply the @show_delete flag if the form set it: 
+					label_for_delete = @show_delete if defined?( @show_delete )
+			%>
+			
+			<%= partial 'shared/sectionFoot_with_buttons',
+
+					:foot_class				=> 'formSurround',
+					:ui_target				=> :auto,
+					:save_caption			=> 'Save changes',
+					:cancel_url				=> resource( controller, url_params ),
+					:cancel_caption		=> 'Cancel without saving',
+					:delete						=> false,
+
+					# Define a special <label> element that can be clicked to activate the delete_button below:
+					:label_for_delete	=> label_for_delete,	# Specify that we want to render a <label> instead of a button.
+					:delete_id				=> delete_uid,				# This is used to associate the label with the button.
+					:delete_caption		=> delete_caption,
+					:delete_class			=> 'left'
+
+			%>
+
+		<% end =%>
+
+
+		<!-- Important: This delete button is HIDDEN and exists in it's own little form.
+		     It has an associated <label> defined above that can be clicked in the preceeding sectionFoot! -->
+		<%= delete_button resource( @obj, url_params ), delete_caption,	:class => "hidden", :id => delete_uid %>
+
+</div>

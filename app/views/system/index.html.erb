@@ -1,0 +1,95 @@
+<%
+
+	# SYSTEM ADMIN index:
+
+	# Define list of resources that can be administered:
+	admin_pages = [
+		{ :label => 'Accommodation',	:url => resource(:suppliers, :type_id => 4) },
+		{ :label => 'Airlines',				:url => resource(:suppliers, :type_id => 1) },
+		{ :label => 'Airports',				:url => resource(:airports) },
+		{ :label => 'Companies',			:url => resource(:companies) },
+		{ :label => 'Countries',			:url => resource(:countries) },
+		#{ :label => 'Doc templates',	:url => resource(:document_templates) },
+		{ :label => 'Doc types',			:url => resource(:document_types) },
+		{ :label => 'Exchange rate',	:url => resource(:exchange_rates) },
+		{ :label => 'Flight agents',	:url => resource(:suppliers, :type_id => 2) },
+		{ :label => 'Ground Hdlr',		:url => resource(:suppliers, :type_id => 5) },
+		{ :label => 'Mailing zones',	:url => resource(:mailing_zones) },
+		{ :label => 'Misc suppliers',	:url => resource(:suppliers, :type_id => 8) },
+		{ :label => 'Misc types',			:url => resource(:trip_element_misc_types) },
+		{ :label => 'PNRs',						:url => resource(:pnrs) },
+		{ :label => 'Titles',					:url => resource(:titles) },
+		{ :label => 'Users',					:url => resource(:users) },
+		{ :label => 'Web Requests',		:url => resource(:web_request_types) },
+		{ :label => 'World regions',	:url => resource(:world_regions) },
+		{ :label => 'App settings',		:url => resource(:app_settings) }
+	]
+
+	# Import any new PNR records from AIR files: (AFTER rendering this page, so we don't cause delay)
+	run_later do
+		Pnr.import_latest_amadeus_records()
+	end
+
+%>
+<!-- System admin: (Administer the picklists etc) -->
+<div class="sectionContainer noSectionFoot clientPage">
+
+   <div class="sectionHead">
+      <h2><span class="ui-icon ui-icon-gear"></span> <span>System admin</span></h2>
+   </div>
+
+   <div class="sectionBody">
+
+      <div class="sectionContainer sectionContainerLeft noSectionHead noSectionFoot tabsContainer">
+         <div class="sectionBody">
+
+            <ul class="sysAdminTabsNav ui-tabs-nav-vertical">
+
+              <% admin_pages.each do |page| %>
+								<%= tag :li, link_to( page[:label], page[:url] ) %>
+              <% end %>
+
+							<!--<li><a href="#sysAdminThemeTabContent">Theme</a></li>-->
+							<li class="ui-tabs-selected"><a href="#sysAdminAboutTabContent">System info</a></li>
+
+						</ul>
+
+         </div>
+      </div>
+
+			
+      <div id="sysAdminTabsContent" class="sysAdminTabsContent ajaxPanel sectionContainer sectionContainerRight noSectionHead noSectionFoot">
+				
+				<div id="sysAdminAboutTabContent" class="sectionBody">
+					<div class="sectionContainer">
+						<div class="sectionHead">
+							<h3>
+								<span class="ui-icon ui-icon-info"></span>
+								About this system
+							</h3>
+						</div>
+						<div class="sectionBody formSurround">
+								<dl>
+									<dt><br/>Description:</dt>
+									<dd>Steppes Travel CRM System (AKA Database2)</dd>
+									<dt><br/>Version:</dt>
+									<dd>0.2</dd>
+									<dt><br/>Database environment:</dt>
+									<dd><%= Merb.environment %></dd>
+								</dl>
+						</div>
+						<div class="sectionFoot formSurround"></div>
+					</div>
+				</div>
+
+				<!--<div id="sysAdminThemeTabContent" class="sectionBody">
+						<div id="ui-theme-switcher"></div>
+				</div>-->
+
+				<!-- System admin pages will be loaded here via ajax. -->
+
+			 </div>
+
+		 </div>
+
+</div>

@@ -1,0 +1,75 @@
+.itineraryPreview {
+	padding:1em;
+	text-align:center;
+}
+
+
+/* Headings: */
+
+	.itineraryPreview H1,
+	.itineraryPreview H2,
+	.itineraryPreview H3,
+	.itineraryPreview H4,
+	.itineraryPreview DT,
+	.itineraryPreview CAPTION {
+		font-family:times;
+		font-weight:bold;
+	}
+
+	.itineraryPreview H1 {
+		font-size:3em;
+	}
+
+	.itineraryPreview H2 {
+		font-size:1.5em;
+	}
+
+	.itineraryPreview H3 {
+		font-size:1.2em;
+	}
+
+	.itineraryPreview H4 {
+		font-size:1em;
+	}
+
+	.itineraryPreview DT,
+	.itineraryPreview CAPTION {
+		font-size:2em;
+	}
+
+
+
+
+
+
+/* Tables: */
+
+	.itineraryPreview TABLE {
+		display:inline-block;
+	}
+
+	.itineraryPreview DT,
+	.itineraryPreview TABLE CAPTION {
+		margin-top:2em;
+	}
+
+	.itineraryPreview TABLE CAPTION {
+		left:-9999em;
+		position:absolute;
+	}
+
+
+	.itineraryPreview TABLE TH {
+		border:none;
+		text-align:left;
+	}
+
+	.itineraryPreview TABLE TD {
+		border:solid 1px #999;
+		padding:1em;
+		text-align:left;
+	}
+
+	.itineraryPreview TABLE TD UL {
+		list-style-type:none;
+	}
