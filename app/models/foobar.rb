@@ -6,3 +6,5 @@ class Foobar
   property :name, String
 
 end
+
+# Foobar.auto_migrate!		# Warning: Running this will clear the table!
