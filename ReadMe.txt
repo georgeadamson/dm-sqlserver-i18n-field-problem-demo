@@ -13,3 +13,8 @@ To run this you need to:
   (Try storing text such as "Américas")
   Unless you ran the tests you'll need to manually create a table named "foobars" with id and name fields.
   (Or automigrate the table by running "Foobar.auto_migrate!" in the merb console "jruby -S merb -i")
+
+
+Thanks to Alex Heaton for creating this sample app.
+
+George
