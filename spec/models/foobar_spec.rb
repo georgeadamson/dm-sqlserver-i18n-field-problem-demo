@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require File.join( File.dirname(__FILE__), '..', "spec_helper" )
 
 # To run this: jruby -X-C -S rake spec SPEC=spec/models/foobar_spec.rb
@@ -26,6 +28,6 @@ end
 
 def valid_foobar_attributes
   {
-    :name => 'AmÈricas'
+    :name => 'Am√©ricas'
   }
 end
